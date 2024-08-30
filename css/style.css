@@ -2,6 +2,27 @@
     UTILITIES
 ****************************************************/
 
+.delButton {
+    border-radius: 3px;
+    color: red;
+    border-color: red;
+    background-color: white;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.todoItem:hover {
+    cursor: pointer;
+}
+
+#addElement {
+    width: 300px;
+}
+
+
+
 /********************* 
     BACKGROUND COLORS
 **********************/

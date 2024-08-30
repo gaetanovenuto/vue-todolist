@@ -21,23 +21,37 @@
     </head>
     <body>
 
-        <!-- header -->
-        <header>
-                HEADER
-        </header>
-        <!-- /header -->
+        <div id="app">
 
-        <!-- main -->
-        <main>
-                MAIN
-        </main>
-        <!-- /main -->
+            <!-- header -->
+            <header>
+                    <h1 class="text-center py-3">
+                        Lista di cose da fare durante la giornata
+                    </h1>
+            </header>
+            <!-- /header -->
 
-        <!-- footer -->
-        <footer>      
-                FOOTER     
-        </footer>
-        <!-- /footer -->
+            <!-- main -->
+            <main>
+                <div class="container">
+                    <ul class="fs-3" >
+                        <li v-for="(todo, i) in todos">  
+                            <span :class="todo.done ? 'done' : ''" @click="isDone(i)">
+                                {{ todo.text }} 
+                            </span>
+                            <button class="fs-5 px-2 ms-3 delButton" @click="deleteItem(i)">X</button>
+                        </li>
+                    </ul>
+                    <div class="p-3">
+                        <label for="addElement" class="h3 text-center">Aggiungi un elemento alla lista delle cose da fare:</label>
+                        <input type="text" v-model="newTodoText" id="addElement" class="ms-5 me-2" @keyup.enter="addItem()">
+                        <button @click="addItem()">Aggiungi</button>
+                    </div>
+                </div>
+            </main>
+            <!-- /main -->
+
+        </div>
 
         <!-- VUE JS -->
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
